@@ -7,7 +7,7 @@ export const SearchForm = () => {
       <AiOutlineSearch className={styles.searchIcon} />
       <input
         type="search"
-        placeholder="タイトルを入力"
+        placeholder="タイトルを検索"
         className={styles.searchInput}
       />
       <i className={styles.searchBg} />

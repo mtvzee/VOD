@@ -1,0 +1,55 @@
+.container {
+  position: relative;
+}
+
+.imgWrapper {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.box {
+  opacity: 0;
+  visibility: hidden;
+  width: 230px;
+  background: rgb(5, 38, 45);
+  border-radius: 8px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  transition: 0.3s ease-out 0.5s;
+}
+.container:hover .box {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.1s;
+}
+.boxItem {
+  position: relative;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.link,
+.text {
+  display: block;
+  padding: 20px 0 20px 40px;
+  color: #fff;
+}
+.link {
+  text-decoration: none;
+}
+.link:hover,
+.text:hover {
+  text-decoration: underline;
+}
