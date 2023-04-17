@@ -1,0 +1,8 @@
+.imgWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/7;
+}
+.img {
+  object-fit: cover;
+}
