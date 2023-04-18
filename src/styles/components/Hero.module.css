@@ -1,8 +1,98 @@
+.container {
+  display: flex;
+}
+.description {
+  width: 0;
+  position: relative;
+}
+.descriptionGroup {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  z-index: 10;
+}
+.title {
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 700;
+}
+.overview {
+  display: none;
+}
+.btnGroup {
+  margin-top: max(20px, 2vw);
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+.playBtn {
+  padding: 1.5vw 2.5vw;
+  border-radius: 8px;
+  background: #fff;
+}
+.detailBtn {
+  padding: 1.5vw;
+  border-radius: 50%;
+  background: #333;
+  color: #eee;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btnIcon {
+  width: clamp(20px, 5vw, 30px);
+  height: clamp(20px, 5vw, 30px);
+}
+.btnText {
+  font-size: max(14px, 1.5vw);
+}
+.detailBtnText {
+  display: none;
+}
+@media (min-width: 768px) {
+  .description {
+    flex: 0 0 35%;
+  }
+  .descriptionGroup {
+    width: 500px;
+    transform: translateY(-50%);
+  }
+  .overview {
+    display: block;
+    margin-top: max(20px, 2.4vw);
+  }
+  .btn {
+    padding: 0.5vw 1.5vw;
+    border-radius: 10px;
+  }
+  .btnIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .detailBtnText {
+    display: block;
+  }
+}
+
 .imgWrapper {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16/7;
+  flex: 1 1 auto;
+  aspect-ratio: 16/9;
 }
 .img {
   object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), transparent 40%);
 }
