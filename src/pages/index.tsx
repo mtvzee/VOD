@@ -1,6 +1,6 @@
 import { Carousel } from '@/components/Carousel';
 import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
+import { HeroSlider } from '@/components/HeroSlider';
 import Head from 'next/head';
 import styles from '../styles/pages/Home.module.css';
 
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <Hero />
+        <HeroSlider />
         <Carousel />
       </main>
     </>

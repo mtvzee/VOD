@@ -1,0 +1,42 @@
+.slider {
+  position: relative;
+}
+.container {
+  padding: 0 4%;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.btn {
+  display: none;
+}
+.slider:hover .btn {
+  display: block;
+  position: absolute;
+  width: 4%;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+.btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.prevBtn {
+  left: 0;
+}
+.nextBtn {
+  right: 0;
+}
+.btnIcon {
+  width: 80%;
+  height: 100%;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+.btn:hover .btnIcon {
+  transform: scale(1.1);
+}
