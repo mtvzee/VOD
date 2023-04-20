@@ -1,0 +1,16 @@
+.toTop {
+  height: 70px;
+  background: rgb(74, 74, 74);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.copyright {
+  height: 50px;
+  background: rgb(34, 34, 34);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

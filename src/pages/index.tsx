@@ -1,4 +1,5 @@
 import { Carousel } from '@/components/Carousel';
+import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { HeroSlider } from '@/components/HeroSlider';
 import Head from 'next/head';
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSlider />
         <Carousel />
       </main>
+      <Footer />
     </>
   );
 }
