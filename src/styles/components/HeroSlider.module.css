@@ -7,23 +7,21 @@
   display: flex;
 }
 
-.btn {
+.prevBtn,
+.nextBtn {
   display: none;
 }
-.slider:hover .btn {
+.slider:hover .prevBtn,
+.slider:hover .nextBtn {
   display: block;
   position: absolute;
   width: 4%;
   height: 100%;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 10;
   background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
   transition: 0.2s ease-out;
-}
-.btn:hover {
-  background: rgba(0, 0, 0, 0.6);
 }
 .prevBtn {
   left: 0;
@@ -31,12 +29,17 @@
 .nextBtn {
   right: 0;
 }
+.slider:hover .prevBtn:hover,
+.slider:hover .nextBtn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
 .btnIcon {
   width: 80%;
   height: 100%;
   color: #fff;
   transition: 0.2s ease-out;
 }
-.btn:hover .btnIcon {
+.prevBtn:hover .btnIcon,
+.nextBtn:hover .btnIcon {
   transform: scale(1.1);
 }

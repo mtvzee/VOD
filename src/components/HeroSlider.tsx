@@ -10,10 +10,10 @@ export const HeroSlider = () => {
           <HeroSlide key={slide} />
         ))}
       </div>
-      <button className={`${styles.btn} ${styles.prevBtn}`}>
+      <button className={styles.prevBtn}>
         <TbCircleChevronLeft className={styles.btnIcon} />
       </button>
-      <button className={`${styles.btn} ${styles.nextBtn}`}>
+      <button className={styles.nextBtn}>
         <TbCircleChevronRight className={styles.btnIcon} />
       </button>
     </div>
