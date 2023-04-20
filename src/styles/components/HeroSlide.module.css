@@ -82,6 +82,11 @@
     display: block;
   }
 }
+@media (min-width: 1024px) {
+  .container {
+    aspect-ratio: 16/5;
+  }
+}
 
 .imgWrapper {
   position: relative;
