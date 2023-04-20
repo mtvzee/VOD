@@ -1,4 +1,4 @@
-import { Carousel } from '@/components/Carousel';
+import { Category } from '@/components/Category';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { HeroSlider } from '@/components/HeroSlider';
@@ -15,9 +15,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <main className={styles.main}>
         <HeroSlider />
-        <Carousel />
+        <Category />
+        <Category />
+        <Category />
+        <Category />
       </main>
       <Footer />
     </>

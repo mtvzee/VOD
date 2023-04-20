@@ -1,0 +1,7 @@
+.container {
+  padding: 20px 0;
+}
+.title {
+  padding-left: 4%;
+  font-size: clamp(14px, 2.5vw, 20px);
+}

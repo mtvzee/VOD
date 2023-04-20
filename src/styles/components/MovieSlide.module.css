@@ -1,0 +1,23 @@
+.container {
+  flex: 0 0 calc(100% / 3);
+}
+@media (min-width: 768px) {
+  .container {
+    flex: 0 0 calc(100% / 4);
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    flex: 0 0 calc(100% / 5);
+  }
+}
+.imgWrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  width: 98%;
+  cursor: pointer;
+}
+.img {
+  object-fit: cover;
+  border-radius: 8px;
+}
