@@ -3,5 +3,6 @@
 }
 .title {
   padding-left: 4%;
+  margin-bottom: 12px;
   font-size: clamp(14px, 2.5vw, 20px);
 }
