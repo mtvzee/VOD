@@ -1,35 +1,44 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { TbCircleChevronLeft, TbCircleChevronRight } from 'react-icons/tb';
 import styles from '../styles/components/HeroSlider.module.css';
 import { HeroSlide } from './HeroSlide';
-import throttle from 'lodash/throttle';
+
+const images = [1, 2, 3];
 
 export const HeroSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const handleClickChevron = (direction: string) => {
+  useEffect(() => {
     if (sliderRef.current) {
-      const { scrollLeft, clientWidth } = sliderRef.current;
-      const sliderPosition =
-        direction === 'left'
-          ? scrollLeft - clientWidth
-          : scrollLeft + clientWidth;
-      sliderRef.current.scrollTo({ left: sliderPosition, behavior: 'smooth' });
+      const { clientWidth } = sliderRef.current;
+      sliderRef.current.scrollTo({
+        left: clientWidth * currentIndex,
+        behavior: 'smooth',
+      });
     }
+  }, [currentIndex]);
+
+  const handleClickPrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+  const handleClickNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
-  const handleClickDot = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  const handleScrollX = throttle(() => {
+  const handleScrollX = () => {
     if (sliderRef.current) {
       const { scrollLeft, clientWidth } = sliderRef.current;
       const scrollPosition = Math.floor(scrollLeft / clientWidth);
-      setCurrentIndex(scrollPosition);
+      if (scrollLeft % clientWidth === 0) {
+        setCurrentIndex(scrollPosition);
+      }
     }
-  }, 300);
+  };
 
   return (
     <div className={styles.slider}>
@@ -38,29 +47,24 @@ export const HeroSlider = () => {
         ref={sliderRef}
         onScroll={handleScrollX}
       >
-        {[1, 2, 3].map((slide) => (
+        {images.map((slide) => (
           <HeroSlide key={slide} />
         ))}
       </div>
-      <button
-        className={styles.prevBtn}
-        onClick={() => handleClickChevron('left')}
-      >
+      <button className={styles.prevBtn} onClick={handleClickPrev}>
         <TbCircleChevronLeft className={styles.btnIcon} />
       </button>
-      <button
-        className={styles.nextBtn}
-        onClick={() => handleClickChevron('right')}
-      >
+      <button className={styles.nextBtn} onClick={handleClickNext}>
         <TbCircleChevronRight className={styles.btnIcon} />
       </button>
       <div className={styles.pagination}>
-        {[1, 2, 3].map((_, index) => (
+        {images.map((_, index) => (
           <span
             key={index}
             className={`${styles.dot} ${
               currentIndex === index && styles.active
             }`}
+            onClick={() => setCurrentIndex(index)}
           />
         ))}
       </div>
