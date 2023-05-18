@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { TbCircleChevronLeft, TbCircleChevronRight } from 'react-icons/tb';
 import styles from '../styles/components/HeroSlider.module.css';
 import { HeroSlide } from './HeroSlide';
+import throttle from 'lodash/throttle';
 
 const images = [1, 2, 3];
 
@@ -30,7 +31,7 @@ export const HeroSlider = () => {
     );
   };
 
-  const handleScrollX = () => {
+  const handleScrollX = throttle(() => {
     if (sliderRef.current) {
       const { scrollLeft, clientWidth } = sliderRef.current;
       const scrollPosition = Math.floor(scrollLeft / clientWidth);
@@ -38,7 +39,7 @@ export const HeroSlider = () => {
         setCurrentIndex(scrollPosition);
       }
     }
-  };
+  }, 200);
 
   return (
     <div className={styles.slider}>
