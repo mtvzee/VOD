@@ -14,27 +14,26 @@ const MOVIE_DATA = {
 export const HeroSlide = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.description}>
-        <div className={styles.descriptionGroup}>
-          <h2 className={styles.title}>{MOVIE_DATA.title}</h2>
-          <p className={styles.overview}>{MOVIE_DATA.overview}</p>
-          <div className={styles.btnGroup}>
-            <button className={`${styles.btn} ${styles.playBtn}`}>
-              <CiPlay1 className={styles.btnIcon} />
-              <span className={styles.btnText}>再生</span>
-            </button>
-            <button className={`${styles.btn} ${styles.detailBtn}`}>
-              <GoInfo className={styles.btnIcon} />
-              <span className={`${styles.btnText} ${styles.detailBtnText}`}>
-                詳細
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
+      <div className={styles.space} />
       <div className={styles.imgWrapper}>
-        <div className={styles.overlay} />
         <Image src={IMAGE_URL} alt="hero-image" fill className={styles.img} />
+        <div className={styles.overlay} />
+      </div>
+      <div className={styles.description}>
+        <h2 className={styles.title}>{MOVIE_DATA.title}</h2>
+        <p className={styles.overview}>{MOVIE_DATA.overview}</p>
+        <div className={styles.btnGroup}>
+          <button className={`${styles.btn} ${styles.playBtn}`}>
+            <CiPlay1 className={styles.btnIcon} />
+            <span className={styles.btnText}>再生</span>
+          </button>
+          <button className={`${styles.btn} ${styles.detailBtn}`}>
+            <GoInfo className={styles.btnIcon} />
+            <span className={`${styles.btnText} ${styles.detailBtnText}`}>
+              詳細
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );

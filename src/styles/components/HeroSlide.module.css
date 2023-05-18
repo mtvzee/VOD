@@ -1,18 +1,33 @@
 .container {
+  position: relative;
   flex: 0 0 100%;
   aspect-ratio: 16/9;
   display: flex;
+  scroll-snap-align: start;
 }
-.description {
-  width: 0;
+.space {
+  flex: 0 0 0;
+}
+.imgWrapper {
   position: relative;
+  flex: 1 1 auto;
 }
-.descriptionGroup {
-  width: 300px;
+.img {
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), transparent 40%);
+}
+
+.description {
   position: absolute;
   top: 50%;
-  left: 30px;
+  left: 8vw;
   z-index: 5;
+  width: 300px;
 }
 .title {
   font-size: clamp(20px, 5vw, 60px);
@@ -24,6 +39,7 @@
 .btnGroup {
   margin-top: max(20px, 2vw);
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 .btn {
@@ -59,10 +75,10 @@
   display: none;
 }
 @media (min-width: 768px) {
-  .description {
+  .space {
     flex: 0 0 35%;
   }
-  .descriptionGroup {
+  .description {
     width: 500px;
     transform: translateY(-50%);
   }
@@ -91,19 +107,4 @@
   .container {
     aspect-ratio: 16/6;
   }
-  
-}
-
-.imgWrapper {
-  position: relative;
-  flex: 1 1 auto;
-}
-.img {
-  object-fit: cover;
-}
-.overlay {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), transparent 40%);
 }
