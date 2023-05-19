@@ -10,6 +10,7 @@ export const HeroSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
+  // currentIndexが更新されるとそのインデックスのスライドまで移動する
   useEffect(() => {
     if (sliderRef.current) {
       const { clientWidth } = sliderRef.current;
@@ -20,6 +21,7 @@ export const HeroSlider = () => {
     }
   }, [currentIndex]);
 
+  // 10秒間隔でスライドが自動的に遷移する
   useEffect(() => {
     const timerId = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -40,6 +42,7 @@ export const HeroSlider = () => {
     );
   };
 
+  // ホイール等で横方向に移動した際にインデックスを更新できないので、スクロール時にスライドのインデックスを検知して更新する
   const handleScrollX = throttle(() => {
     if (sliderRef.current) {
       const { scrollLeft, clientWidth } = sliderRef.current;
