@@ -20,6 +20,15 @@ export const HeroSlider = () => {
     }
   }, [currentIndex]);
 
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 10000);
+    return () => clearInterval(timerId);
+  }, []);
+
   const handleClickPrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
