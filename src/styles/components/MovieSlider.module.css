@@ -4,7 +4,9 @@
 .container {
   padding: 0 4%;
   overflow-x: scroll;
+  scroll-snap-type: x mandatory;
   display: flex;
+  align-items: center;
 }
 
 .prevBtn,
@@ -15,7 +17,7 @@
 .slider:hover .nextBtn {
   display: block;
   position: absolute;
-  width: 4%;
+  width: calc(4% - 2px);
   height: 100%;
   top: 50%;
   transform: translateY(-50%);

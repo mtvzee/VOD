@@ -1,5 +1,7 @@
 .container {
   flex: 0 0 calc(100% / 3);
+  padding: 0 4px;
+  scroll-snap-align: center;
 }
 @media (min-width: 768px) {
   .container {
@@ -14,7 +16,6 @@
 .imgWrapper {
   position: relative;
   aspect-ratio: 16/9;
-  width: 98%;
   cursor: pointer;
 }
 .img {
