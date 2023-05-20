@@ -13,35 +13,37 @@
 .nextBtn {
   display: none;
 }
-.slider:hover .prevBtn,
-.slider:hover .nextBtn {
-  display: block;
-  position: absolute;
-  width: calc(4% - 2px);
-  height: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
-  transition: 0.2s ease-out;
-}
-.prevBtn {
-  left: 0;
-}
-.nextBtn {
-  right: 0;
-}
-.slider:hover .prevBtn:hover,
-.slider:hover .nextBtn:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-.btnIcon {
-  width: 80%;
-  height: 100%;
-  color: #fff;
-  transition: 0.2s ease-out;
-}
-.prevBtn:hover .btnIcon,
-.nextBtn:hover .btnIcon {
-  transform: scale(1.1);
+@media (min-width: 768px) {
+  .slider:hover .prevBtn,
+  .slider:hover .nextBtn {
+    display: block;
+    position: absolute;
+    width: calc(4% - 2px);
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease-out;
+  }
+  .prevBtn {
+    left: 0;
+  }
+  .nextBtn {
+    right: 0;
+  }
+  .slider:hover .prevBtn:hover,
+  .slider:hover .nextBtn:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .btnIcon {
+    width: 80%;
+    height: 100%;
+    color: #fff;
+    transition: 0.2s ease-out;
+  }
+  .prevBtn:hover .btnIcon,
+  .nextBtn:hover .btnIcon {
+    transform: scale(1.1);
+  }
 }
